@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "btc-oi-indicator"
+version = "1.1.0"
+description = "Standalone BTC OI/price divergence and funding chart exporter."
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+  "numpy>=1.24,<3",
+  "pandas>=2.0,<3",
+  "plotly>=5.18,<6",
+]
+
+[project.scripts]
+btc-oi-indicator = "btc_oi_indicator.cli:main"
+btc-oi-backfill = "btc_oi_indicator.backfill:main"
+
+[tool.setuptools.packages.find]
+include = ["btc_oi_indicator*"]
